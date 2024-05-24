@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: anglerfish-dotnet-basic-gitops
+  description: This is GitOps manifest for anglerfish-dotnet-basic   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: anglerfish-dotnet-basic
+    janus-idp.io/tekton: anglerfish-dotnet-basic 
+    backstage.io/kubernetes-id: anglerfish-dotnet-basic 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:anglerfish-dotnet-basic
